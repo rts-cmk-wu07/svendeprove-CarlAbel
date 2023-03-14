@@ -5,7 +5,8 @@ import ClassDetailsCard from "../components/ClassDetailsCard"
 
 export default function ClassDetails() {
   return (
-    <div className="ClassDetails">
+    <div className="Activities">
+      <div className="">Activities</div>
       <div className="">
         <ClassDetailsCard />
       </div>

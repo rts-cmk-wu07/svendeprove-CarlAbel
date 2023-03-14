@@ -1,4 +1,6 @@
 @import url("./styles/textStroke.css");
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto&family=Ubuntu&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

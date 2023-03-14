@@ -8,7 +8,7 @@ import { PropagateLoader } from 'react-spinners';
 export default function ClassesForYou() {
     const { data, loading, error } = useAxios(
         {
-         url: "https://test-trainer-api.onrender.com/api/v1/classes"
+         url: "http://localhost:4000/api/v1/activities"
         }
     )
   const navigate = useNavigate()

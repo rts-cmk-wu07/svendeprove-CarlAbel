@@ -17,7 +17,7 @@ export default function Login() {
     setIsLoading(true)
 
     try {
-      const response = await axios.post("https://test-trainer-api.onrender.com/auth/token", {
+      const response = await axios.post("http://localhost:4000/auth/token", {
         username: data.username,
         password: data.password
       })

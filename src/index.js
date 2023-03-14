@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import TokenProvider from './components/TokenProvider';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import "./index.css"
-import ClassDetails from './pages/ClassDetails';
+import ClassDetails from './pages/Activities';
 import MyClasses from './pages/MyClasses';
 import Velkommen from './pages/Velkommen';
 
@@ -18,12 +18,16 @@ const router = createBrowserRouter([
     element: <Velkommen />,
     children: [
       {
+        path: "/",
+        element: <Layout/>,
+      },
+      {
         index: true,
-        element: <Velkommen/>
+        element: <Velkommen />
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />
       },
       {
         path: "/profile",
