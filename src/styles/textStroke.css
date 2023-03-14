@@ -1,0 +1,6 @@
+/* Text Stroke */
+@tailwind utilities;
+.text-stroke{
+    -webkit-text-stroke: 1px #000;
+    color: transparent;
+}
