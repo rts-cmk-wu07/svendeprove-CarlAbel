@@ -21,7 +21,6 @@ export default function Login() {
         username: data.username,
         password: data.password
       })
-
       if (response.status === 200) {
         if (data.remember) {
           const milliseconds = response.data.validUntil - Date.now()

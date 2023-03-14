@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom"
 import backgroundImage from "../Assets/splash-image.jpg"
 
 export default function Velkommen() {
+  const navigate = useNavigate()
+  function handleClick(event) {
+    event.preventDefault()
+    sessionStorage.setItem("key", true)
+    navigate("/home")
+    navigate(0)
+  }
   return (
-    <div className="Welcome">
+    <div className="Velkommen">
       <img
         src={backgroundImage}
         alt="welcome-background"
@@ -11,7 +19,7 @@ export default function Velkommen() {
 
       <div className="absolute z-20 bottom-24 h-94">
         <div className="-translate-y-48">
-          <h1 className="text-white text-stroke-landrup ml-14 text-[36px] translate-y-8 font-roboto">
+          <h1 className="text-white text-transparent text-stroke-landrup ml-14 text-[36px] translate-y-8 font-roboto">
             LANDRUP
           </h1>
           <div className="flex-col items-center">
@@ -21,6 +29,7 @@ export default function Velkommen() {
           </div>
         </div>
         <input
+          onClick={handleClick}
           className="bg-[#5E2E53] text-[#E9E9E9] text-center text-[18px] absolute px-16 py-4 -bottom-8 rounded-xl left-[90px]"
           type="submit"
           value="Kom i gang"
