@@ -24,7 +24,6 @@ export default function Activities() {
                 className="w-50 overflow-hidden cursor-pointer relative"
                 key={item.id}
               >
-              
                 <img
                   className="h-[344px] w-[356px] relative object-cover rounded-tr-[39px] rounded-tl-[39px] rounded-bl-[39px] shadow-sm"
                   src={item.asset.url}
@@ -35,7 +34,6 @@ export default function Activities() {
                   <h2 className="text-[18px] truncate text-black font-ubuntu ml-8">{item.minAge} - {item.maxAge} år</h2>
                 </div>
               </div>
-              
             ))}
         </div>
       )}

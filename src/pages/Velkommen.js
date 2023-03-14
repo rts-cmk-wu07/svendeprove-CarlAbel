@@ -19,7 +19,7 @@ export default function Velkommen() {
 
       <div className="absolute z-20 bottom-24 h-94">
         <div className="-translate-y-48">
-          <h1 className="text-white text-transparent text-stroke-landrup ml-14 text-[36px] translate-y-8 font-roboto">
+          <h1 className="text-transparent text-stroke-landrup ml-14 text-[36px] translate-y-8 font-roboto">
             LANDRUP
           </h1>
           <div className="flex-col items-center">

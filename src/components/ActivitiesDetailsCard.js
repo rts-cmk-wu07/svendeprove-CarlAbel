@@ -27,17 +27,17 @@ export default function ActivitiesDetailsCard() {
           className="absolute z-0 h-[32rem] w-full object-cover shadow-md"
         />
         <input
-          className="bg-white text-[26px] absolute right-0 px-6 py-3 bottom-6 rounded-l-xl"
+          className="bg-[#5E2E53] text-white text-[26px] absolute right-6 px-6 py-3 bottom-6 rounded-l-xl"
           type="submit"
           value="Sign up"
         />
       </div>
-      <div className="w-full ml-5">
-          <h2 className="w-[17rem] font-ubuntu text-[24px] font-normal text-white">
+      <div className="w-full h-[60px] ml-5 mt-4 relative">
+          <h2 className="absolute top-0 w-[17rem] font-ubuntu text-[24px] font-normal text-white">
                 {name}
               </h2>
-          <span className="text-white text-[18px]">{data.minAge} -  {data.maxAge} år</span>
-          <p className="text-white leading-[1.4rem] text-[18px]">{description}</p>
+          <span className="text-white text-[18px] absolute top-7"> {data.minAge} - {data.maxAge} år</span>
+          <p className="text-white text-[18px] absolute top-16">{description}</p>
       </div>
     </>
   )
