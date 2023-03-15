@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
+
 export default function useAxios({ url, method = "GET", headers = {} }) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)

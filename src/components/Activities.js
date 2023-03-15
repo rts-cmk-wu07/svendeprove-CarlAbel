@@ -16,7 +16,7 @@ export default function Activities() {
       {loading ? (
         <PropagateLoader className="text-center" color="#36d7b7" />
       ) : (
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-8 pb-16">
           {data &&
             data.map((item) => (
               <div

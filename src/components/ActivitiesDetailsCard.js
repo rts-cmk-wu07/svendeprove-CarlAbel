@@ -8,19 +8,19 @@ export default function ActivitiesDetailsCard() {
   const { id } = useParams()
   //custom hook
   const { data } = useAxios(
-        {
-         url: `http://localhost:4000/api/v1/activities/${id}`
-        }
-    )
+    {
+      url: `http://localhost:4000/api/v1/activities/${id}`
+    }
+  )
   if (!data) {
     return <PropagateLoader className="text-center" color="#36d7b7" />
   }
 
   const { name, asset, description } = data
-  
+
   return (
     <>
-      <div className="w-full h-[32rem] relative rounded-lg">
+      <div className="w-full min-h-[32rem] relative rounded-lg">
         <img
           src={asset.url}
           alt={name}
@@ -32,12 +32,12 @@ export default function ActivitiesDetailsCard() {
           value="Tilmeld"
         />
       </div>
-      <div className="w-full h-[60px] ml-5 mt-4 relative">
-          <h2 className="absolute top-0 w-[17rem] font-ubuntu text-[24px] font-normal text-white">
-                {name}
-              </h2>
-          <span className="text-white text-[18px] absolute top-7"> {data.minAge} - {data.maxAge} år</span>
-          <p className="text-white text-[18px] absolute top-16">{description}</p>
+      <div className="w-full ml-5 mt-4 relative">
+        <h2 className="top-0 w-[17rem] font-ubuntu text-[24px] font-normal text-white">
+          {name}
+        </h2>
+        <span className="text-white text-[18px] top-7"> {data.minAge} - {data.maxAge} år</span>
+        <p className="text-white text-[18px] mt-2 top-16">{description}</p>
       </div>
     </>
   )
