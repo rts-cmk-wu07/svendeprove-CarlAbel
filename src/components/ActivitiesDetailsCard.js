@@ -27,9 +27,9 @@ export default function ActivitiesDetailsCard() {
           className="absolute z-0 h-[32rem] w-full object-cover shadow-md"
         />
         <input
-          className="bg-[#5E2E53] text-white text-[26px] absolute right-6 px-6 py-3 bottom-6 rounded-l-xl"
+          className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
           type="submit"
-          value="Sign up"
+          value="Tilmeld"
         />
       </div>
       <div className="w-full h-[60px] ml-5 mt-4 relative">
