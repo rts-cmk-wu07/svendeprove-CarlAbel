@@ -6,12 +6,9 @@ import ActivitiesDetails from "./pages/ActivitiesDetails"
 import Search from "./pages/Search"
 import Login from "./pages/Login"
 import TokenProvider from "./contexts/TokenProvider"
-
-
+import Calender from "./pages/Calender"
 
 function App() {
-
-
   return (
     <TokenProvider>
       <BrowserRouter>
@@ -25,6 +22,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/calender" element={<Calender />} />
             <Route path="/activities/:id" element={<ActivitiesDetails />} />
           </Route>
         </Routes>

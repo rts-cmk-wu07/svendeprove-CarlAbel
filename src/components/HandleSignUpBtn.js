@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { TokenContext } from './TokenProvider';
+import { TokenContext } from '../contexts/TokenProvider';
 import axios from "axios"
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -13,7 +13,7 @@ export default function HandleSignUpBtn() {
   async function handleSignUp() {
     try {
       const response = await axios.post(
-        `https://test-trainer-api.onrender.com/api/v1/users/${token.userId}/classes/${id}`,
+        `http://localhost:4000/api/v1/users/${token.userid}/activities/${id}`,
         undefined,
         {
           headers: {
@@ -30,20 +30,20 @@ export default function HandleSignUpBtn() {
   }
   return (
 
-<>
-    {isSignedUp ? (
-          <span className="bg-white text-[26px] absolute right-0 px-6 py-3 bottom-6 rounded-l-xl z-50">
-            Signed up
-          </span>
-        ) : (
-          <input
-            className="bg-white text-[26px] absolute right-0 px-6 py-3 bottom-6 rounded-l-xl z-50"
-            type="submit"
-            value="Sign up"
-            onClick={handleSignUp}
-          />
-        )}
-</>        
+    <>
+      {isSignedUp ? (
+        <span className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl">
+          Signed up
+        </span>
+      ) : (
+        <input
+          className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
+          type="submit"
+          value="Sign up"
+          onClick={handleSignUp}
+        />
+      )}
+    </>
   )
-  
+
 }
