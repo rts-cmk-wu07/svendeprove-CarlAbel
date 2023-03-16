@@ -42,7 +42,7 @@ export default function SearchField() {
       </form>
 
       {/* Display filtered activities */}
-      {hasResults && (
+      {hasResults ? (
         <div className="flex flex-col items-center gap-8 mt-8">
           {filteredActivities.map((activity) => (
             <div
@@ -65,6 +65,14 @@ export default function SearchField() {
               </div>
             </div>
           ))}
+        </div>
+      ) : (
+        <div className="mt-8 text-center text-white">
+          {searchQuery !== "" ? (
+            "Der blev ikke fundet nogle aktiviteter med det navn, prøv at søge efter noget andet"
+          ) : (
+            "Der blev ikke fundet nogle aktiviteter. Prøv at søge efter noget andet."
+          )}
         </div>
       )}
     </div>

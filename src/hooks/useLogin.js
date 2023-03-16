@@ -42,7 +42,7 @@ export default function useLogin() {
     }
     useEffect(function () {
         if (token) {
-            navigate("/home")
+            navigate("/calendar")
         }
     }, [token, navigate])
 

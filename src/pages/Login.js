@@ -1,6 +1,7 @@
 import backgroundImage from "../Assets/splash-image.jpg"
 import { useState } from "react";
 import useLogin from "../hooks/useLogin";
+import { X } from "lucide-react"
 
 
 export default function Login() {
@@ -17,8 +18,11 @@ export default function Login() {
     setLoginInfo(prevState => ({ ...prevState, [name]: newValue }));
   };
 
-  const { handleLogin, loading, error } = useLogin()
+  const { handleLogin, loading, error } = useLogin();
 
+  const handleClose = () => {
+    window.location = "/home";
+  };
 
   return (
     <div className="Login overflow-hidden relative flex justify-center items-center">
@@ -32,6 +36,8 @@ export default function Login() {
       />
       <div className="bg-[#5E2E5380] absolute inset-0 scale-125 -translate-y-7 overflow-hidden rotate-[60deg] z-20"></div>
       <form onSubmit={(e) => handleLogin(e, loginInfo)} className="absolute z-30 h-94 top-40 flex flex-col justify-center items-center">
+
+        <X onClick={handleClose} className="bg-[#5E2E5380] rounded-3xl w-12 h-12 absolute -top-20 -right-10 text-white text-lg" />
         <h1 className="text-[48px] text-white py-4 font-ubuntu mr-20">Log ind</h1>
         <input
           className="bg-[#EAEAEA] text-black text-[18px] px-6 py-2 mb-4 w-full max-w-sm"
@@ -68,3 +74,4 @@ export default function Login() {
     </div>
   );
 }
+

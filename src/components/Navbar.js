@@ -18,7 +18,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="my-6 text-[28px] rounded-3xl border-[2px] border-black p-2">
-          <Link to="/calender">
+          <Link to="/calendar">
             <Calendar size={28} />
           </Link>
         </li>

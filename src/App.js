@@ -6,7 +6,7 @@ import ActivitiesDetails from "./pages/ActivitiesDetails"
 import Search from "./pages/Search"
 import Login from "./pages/Login"
 import TokenProvider from "./contexts/TokenProvider"
-import Calender from "./pages/Calender"
+import Calendar from "./pages/Calendar"
 import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
             <Route path="/search" element={<Search />} />
 
             <Route path="/login" element={<Login />} />
-            <Route path="/calender" element={<ProtectedRoute><Calender /></ProtectedRoute>} />
+            <Route path="/calendar" element={<ProtectedRoute><Calendar /></ProtectedRoute>} />
             <Route path="/activities/:id" element={<ActivitiesDetails />} />
           </Route>
         </Routes>

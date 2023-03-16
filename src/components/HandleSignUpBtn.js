@@ -10,11 +10,13 @@ export default function HandleSignUpBtn({ act }) {
 
   const [isSignedUp, setIsSignedUp] = useState(false);
   const { token } = useContext(TokenContext)
+
   useEffect(() => {
     if (act.users.map(item => item.id).includes(token.userId)) {
       setIsSignedUp(true)
     }
-  }, []);
+  }, [act.users, token.userId]);
+
   async function handleSignUp() {
     try {
       const response = await axios.post(
