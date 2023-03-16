@@ -19,8 +19,12 @@ export default function Login() {
 
   const { handleLogin, loading, error } = useLogin()
 
+
   return (
     <div className="Login overflow-hidden relative flex justify-center items-center">
+      <div>{loading}</div>
+
+      <div className="absolute text-red-600 z-30 translate-y-20 drop-shadow-lg">{error}</div>
       <img
         src={backgroundImage}
         alt="welcome-background"

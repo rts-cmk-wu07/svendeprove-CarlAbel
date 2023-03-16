@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import backgroundImage from "../Assets/splash-image.jpg"
+import { motion } from "framer-motion";
 
 export default function Velkommen() {
   const navigate = useNavigate()
@@ -28,7 +29,10 @@ export default function Velkommen() {
             <div className="border bg-[#913693] border-[#913693] h-[14px] w-[233px] drop-shadow-lg -translate-y-4"></div>
           </div>
         </div>
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.5 }}
           onClick={handleClick}
           className="bg-[#5E2E53] text-[#E9E9E9] text-center text-[18px] absolute px-16 py-4 -bottom-8 rounded-xl left-[90px]"
           type="submit"

@@ -1,11 +1,13 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { TokenContext } from "../contexts/TokenProvider"
 import axios from "axios";
 import useCookie from "react-use-cookie"
+import { useNavigate } from "react-router-dom";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 export default function useLogin() {
+    const navigate = useNavigate()
     const [, setTokenCookie] = useCookie("auth-cookie", undefined)
     const { token, setToken } = useContext(TokenContext)
     const [loading, setLoading] = useState(false)
@@ -14,8 +16,6 @@ export default function useLogin() {
 
     async function handleLogin(e, request) {
         e.preventDefault()
-
-
         try {
             const response = await axios.post(`${API_URL}/auth/token`, request)
             if (request.rememberMe) {
@@ -40,6 +40,12 @@ export default function useLogin() {
             setLoading(false)
         }
     }
+    useEffect(function () {
+        if (token) {
+            navigate("/home")
+        }
+    }, [token, navigate])
+
     return { handleLogin, loading, error }
 }
 
