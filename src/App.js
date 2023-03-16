@@ -7,6 +7,7 @@ import Search from "./pages/Search"
 import Login from "./pages/Login"
 import TokenProvider from "./contexts/TokenProvider"
 import Calender from "./pages/Calender"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
           >
             <Route path="/home" element={<Home />} />
             <Route path="/search" element={<Search />} />
+
             <Route path="/login" element={<Login />} />
-            <Route path="/calender" element={<Calender />} />
+            <Route path="/calender" element={<ProtectedRoute><Calender /></ProtectedRoute>} />
             <Route path="/activities/:id" element={<ActivitiesDetails />} />
           </Route>
         </Routes>

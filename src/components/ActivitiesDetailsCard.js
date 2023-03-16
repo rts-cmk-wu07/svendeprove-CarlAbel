@@ -26,7 +26,7 @@ export default function ActivitiesDetailsCard() {
           alt={name}
           className="absolute z-0 h-[32rem] w-full object-cover shadow-md"
         />
-        <HandleSignUpBtn />
+        <HandleSignUpBtn act={data} />
       </div>
       <div className="w-full ml-5 mt-4 relative">
         <h2 className="top-0 w-[17rem] font-ubuntu text-[24px] font-normal text-white">

@@ -8,7 +8,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 export default function useLogin() {
     const navigate = useNavigate()
-    const [, setTokenCookie] = useCookie("auth-cookie", undefined)
+    const [, setTokenCookie] = useCookie("auth-cookie", "")
     const { token, setToken } = useContext(TokenContext)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
