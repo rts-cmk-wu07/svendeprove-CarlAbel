@@ -26,8 +26,8 @@ function App() {
 
             <Route path="/login" element={<Login />} />
             <Route path="/calendar" element={<ProtectedRoute><Calendar /></ProtectedRoute>} />
+            <Route path="/calendar/:id" element={<ProtectedRoute><CalendarInstructor /></ProtectedRoute>} />
             <Route path="/activities/:id" element={<ActivitiesDetails />} />
-            <Route path="/calendar/:id" element={<CalendarInstructor />} />
           </Route>
         </Routes>
       </BrowserRouter>

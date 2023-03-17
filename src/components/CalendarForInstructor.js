@@ -15,7 +15,7 @@ export default function CalendarForInstructor() {
     });
     return (
         <div className="">
-            <h1 className="text-[36px] text-white py-4 font-ubuntu ml-5">Kalender</h1>
+            <h1 className="text-[36px] text-white font-ubuntu -translate-y-4 mb-2 -ml-1">Kalender</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {data ? (
@@ -25,8 +25,7 @@ export default function CalendarForInstructor() {
                                 key={activity.id}
                                 className="bg-white shadow-lg rounded-lg overflow-hidden"
                                 onClick={() => navigate({
-                                    pathname: `/calendar/${activity.id}`,
-                                    state: { activity }
+                                    pathname: `/calendar/${activity.id}`
                                 })}
                             >
                                 <div className="px-6 py-4">

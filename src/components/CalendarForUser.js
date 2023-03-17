@@ -16,7 +16,7 @@ export default function CalendarForUser() {
 
     return (
         <div className="">
-            <h1 className="text-[36px] text-white py-4 font-ubuntu ml-5">Kalender</h1>
+            <h1 className="text-[36px] text-white py-4 font-ubuntu -ml-1">Kalender</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {data ? (
