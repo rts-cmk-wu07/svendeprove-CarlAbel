@@ -29,7 +29,6 @@ export default function CalendarForInstructor() {
                             <h2>{activity.name}</h2>
                             <p>{activity.weekday} {activity.time}</p>
                         </Link>
-
                     ))
                 ) : (
                     <PropagateLoader className="text-center" color="#36d7b7" />
