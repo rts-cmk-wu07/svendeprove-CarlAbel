@@ -1,20 +1,19 @@
 import { useContext } from 'react';
 import { TokenContext } from '../contexts/TokenProvider';
 import CalendarForUser from '../components/CalendarForUser';
+import CalendarForInstructor from '../components/CalendarForInstructor';
 
 export default function Calendar() {
     const { token } = useContext(TokenContext);
 
-
-
-
-    console.log(token);
     return (
         <>
             <div className="p-8">
-                <CalendarForUser />
-
-
+                {token.role === 'instructor' ? (
+                    <CalendarForInstructor />
+                ) : (
+                    <CalendarForUser />
+                )}
             </div>
         </>
     );

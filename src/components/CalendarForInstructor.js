@@ -4,7 +4,7 @@ import useAxios from '../hooks/useAxios';
 import { PropagateLoader } from 'react-spinners';
 import { TokenContext } from '../contexts/TokenProvider';
 
-export default function CalendarForUser() {
+export default function CalendarForInstructor() {
     const { token } = useContext(TokenContext);
     const navigate = useNavigate();
     const { data } = useAxios({
@@ -13,7 +13,6 @@ export default function CalendarForUser() {
             authorization: 'Bearer ' + token.token,
         },
     });
-
     return (
         <div className="">
             <h1 className="text-[36px] text-white py-4 font-ubuntu ml-5">Kalender</h1>
@@ -25,7 +24,10 @@ export default function CalendarForUser() {
                             <div
                                 key={activity.id}
                                 className="bg-white shadow-lg rounded-lg overflow-hidden"
-                                onClick={() => navigate(`/activities/${activity.id}`)}
+                                onClick={() => navigate({
+                                    pathname: `/calendar/${activity.id}`,
+                                    state: { activity }
+                                })}
                             >
                                 <div className="px-6 py-4">
                                     <div className="font-bold text-xl mb-2">{activity.name}</div>
