@@ -51,7 +51,7 @@ export default function CalendarInstructor() {
                     // Hvis der er data, vises tilmeldingslisten
                     <ul>
                         {roster && roster.data.map((user) => (
-                            <li key={user.id}>
+                            <li className=" text-white font-ubuntu text-[18px]" key={user.id}>
                                 {user.firstname} {user.lastname}
                             </li>
                         ))}

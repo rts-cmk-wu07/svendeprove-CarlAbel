@@ -1,8 +1,6 @@
 // Importerer nødvendige hooks og komponenter
 import useAxios from "../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { PropagateLoader } from "react-spinners";
 
 // Opretter et funktionskomponent ved navn Activities
@@ -19,7 +17,7 @@ export default function Activities() {
       <pre>{error}</pre>
       {loading ? (
         // Vis en "Loader", imens data hentes
-        <PropagateLoader className="text-center" color="#36d7b7" />
+        <PropagateLoader className="text-center mt-12 h-12" color="#36d7b7" />
       ) : (
         <div className="flex flex-col items-center gap-8 pb-16 overflow-y-scroll">
           {data &&
@@ -48,4 +46,4 @@ export default function Activities() {
 }
 
 
-// Path: src\components\ActivitiesDetailsCard.js
+

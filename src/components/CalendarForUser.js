@@ -18,8 +18,8 @@ export default function CalendarForUser() {
     });
 
     return (
-        <div className="">
-            <h1 className="text-[36px] text-white py-4 font-ubuntu -ml-1">Kalender</h1>
+        <div className="CalendarForUser">
+            <h1 className="text-[36px] text-white py-4 font-ubuntu -ml-1 -translate-y-6">Kalender</h1>
             {/* // Viser aktiviteterne i et gitterlayout */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {/* // Hvis data er tilgængelig, skal du enten vise aktiviteter, eller en besked om, at der ikke er nogen aktiviteter at vise */}
@@ -32,9 +32,11 @@ export default function CalendarForUser() {
                                 onClick={() => navigate(`/activities/${activity.id}`)}
                             >
                                 <div className="px-6 py-4">
-                                    <div className="font-bold text-xl mb-2">{activity.name}</div>
-                                    <p className="text-gray-700 text-base">{activity.time}</p>
-                                    <p className="text-gray-700 text-base">{activity.weekday}</p>
+                                    <h2 className="font-bold text-xl mb-2">{activity.name}</h2>
+                                    <div className="flex">
+                                        <p className="text-gray-700 text-base ">{activity.weekday}</p>
+                                        <p className="text-gray-700 text-base pl-2">{activity.time}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))
@@ -43,7 +45,8 @@ export default function CalendarForUser() {
                     )
                     // Ellers vises en loader, mens data hentes
                 ) : (
-                    <PropagateLoader color="#36d7b7" />
+
+                    <PropagateLoader className="ml-40 mt-54 h-12" color="#36d7b7" />
                 )}
             </div>
         </div>

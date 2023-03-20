@@ -1,10 +1,11 @@
 // Jeg importerer nødvendige hooks, komponenter og kontekster
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TokenContext } from '../contexts/TokenProvider';
 import axios from "axios"
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from "framer-motion";
 
 export default function HandleSignUpBtn({ act }) {
   // Bruger useParams og TokenContext for at få adgang til aktivitets-ID og brugerens token
@@ -51,7 +52,7 @@ export default function HandleSignUpBtn({ act }) {
       );
       console.log(response);
       setIsSignedUp(false);
-      toast.success('You have been removed from the activity!');
+      toast.success('Du er ikke længere tilmeldt dette hold!');
     } catch (error) {
       console.log(error);
     }
@@ -61,14 +62,21 @@ export default function HandleSignUpBtn({ act }) {
     // Viser enten "Forlad" eller "Tilmeld" knappen baseret på brugerens tilmeldingsstatus
     <>
       {isSignedUp ? (
-        <input className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
+        <motion.input
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.5 }}
+          className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
+
           type="button"
           value="Forlad"
           onClick={handleDelete}
         />
-
       ) : (
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: "100%" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1 }}
           className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
           type="button"
           value="Tilmeld"
