@@ -12,7 +12,7 @@ export default function Welcome() {
   // Funktion til at håndtere klik på "Kom i gang"-knappen
   function handleClick(event) {
     event.preventDefault()
-    // Gemmer en nøgle i sessionStorage, der indikerer, at brugeren er logget ind
+    // Gemmer en key i sessionStorage, der indikerer, at brugeren er logget ind
     sessionStorage.setItem("key", true)
     // Navigerer brugeren til hjemmesiden
     navigate("/home")
