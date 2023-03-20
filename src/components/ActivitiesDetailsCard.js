@@ -20,7 +20,7 @@ export default function ActivitiesDetailsCard() {
 
   // Vis en "loader", imens data hentes
   if (!data) {
-    return <PropagateLoader className="text-center mt-52 h-12" color="#36d7b7" />;
+    return <PropagateLoader className="text-center mt-52 h-12" color="#EAEAEA" />;
   }
 
   // Dekonstruer nødvendige data fra API-svaret.

@@ -17,7 +17,7 @@ export default function Activities() {
       <pre>{error}</pre>
       {loading ? (
         // Vis en "Loader", imens data hentes
-        <PropagateLoader className="text-center mt-12 h-12" color="#36d7b7" />
+        <PropagateLoader className="text-center mt-12 h-12" color="#EAEAEA" />
       ) : (
         <div className="flex flex-col items-center gap-8 pb-16 overflow-y-scroll">
           {data &&

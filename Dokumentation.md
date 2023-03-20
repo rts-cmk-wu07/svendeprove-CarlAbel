@@ -39,35 +39,37 @@ Vi har fået til opgave at lave en app til Landrup Dans, hvor man i appen kan lo
 
 For mig var der to overvejelser til dette projekt, enten at skrive i frameworket [Vue.js] eller [React.js]. Jeg endte dog ud med at vælge frameworket React, da det er det framework jeg har mest erfaring med, og hvor jeg kender mest til de funktioner som React frameworket har tilgængeligt til udvikleren.
 
-Med frameworket [React] er der et stort udvalg af npm-packages jeg kan bruge til mit projekt. De har et stort community som gør det nemmere at fejlfinde, og med [React] er det nemmere at genanvende components, hvilket gør det nemmere for mig at skrive kode. Og jeg er også vant til at arbejde med [React] og den måde man opdeler sine components, :::så det er nemmere for mig at skrive kode i [React] end i [Vue.js].
+Med frameworket [React] er der et stort udvalg af npm-packages, hooks mm. jeg kan bruge til mit projekt. De har et stort community som gør det nemmere at fejlfinde, og med [React] er det nemmere at genanvende components, hvilket gør det nemmere for mig at skrive kode. Og jeg er også mere vant til at arbejde med [React] og den måde man opdeler sine components.
 
  Med [React] kan jeg også lave en single page applikation, hvilket gør at min applikation bliver hurtigere og virker mere smooth. Det er også nemmere at lave en single page applikation med [React] end med [Vue.js] da [Vue.js] ikke har en router som [React-router-dom] har.
 
 ### **TailwindCSS**
 
 Jeg har valgt at bruge [TailwindCSS] til at style med fremfor normal CSS. Det er en af de teknologier jeg er gladest for og har mest erfaring med.
-Med TailwindCSS, kan jeg hurtigt sætte en template op for mit projekt, og så kan jeg nemt og hurtigt ændre på stylingen, hvis jeg skulle have brug for det.
+Med TailwindCSS, kan jeg hurtigt sætte en template op for mit projekt, og så kan jeg nemt ændre på stylingen, hvis jeg skulle have brug for det.
 
 Til at starte med stod valget mellem [Bootstrap] & [TailwindCSS] Men fordi jeg havde mest erfaring med TailwindCSS, valgte jeg at bruge TailwindCSS fremfor Bootstrap.
-Jeg føler det er mere frit med [TailwindCSS] da jeg kan lave stylingen på min egen måde, og jeg kan også lave stylingen på en måde som jeg synes er nemmere at læse og forstå. Med Bootstrap har meningerne mere indflydelse på hvordan tingene skal se ud, og det er ikke så nemt at ændre på stylingen, hvis jeg skulle have brug for det.
+Jeg føler det er mere frit med [TailwindCSS] da jeg kan lave stylingen på min egen måde, og jeg kan også lave stylingen på en måde som jeg synes er nemmere at læse og forstå. Med Bootstrap har meningerne med de generiske klasser mere indflydelse på hvordan tingene skal se ud, og det er ikke så nemt at ændre på stylingen, hvis jeg skulle have brug for det.
 
 ## Libraries
 
 ### **Framer-motion**
 
-[Framer-motion] er en npm pakke som gør det muligt at lave animationer i React. Og jeg havde nok ikke haft brug for at bruge denne pakke i dette projekt af denne størrelse. Men jeg har valgt at bruge den fordi jeg har brugt den i nogle af mine tidligere projekter, og jeg synes det er en rigtig god pakke at bruge til animationer og i dette tilfælde brugte jeg den på den første knap på siden. (På Welcome siden.)
+[Framer-motion] er en npm pakke som gør det muligt at lave animationer i React. Og jeg havde nok ikke haft brug for at bruge denne pakke i dette projekt af denne størrelse. Men jeg har valgt at bruge den alligevel fordi jeg har brugt den i nogle af mine tidligere projekter, og jeg synes det er en rigtig god pakke at bruge til animationer og i dette tilfælde brugte jeg den på den første knap på siden samt tilmeld og afmeld knapperne.
 
 Det der er godt ved denne pakke er, det er meget nemmere at lave animationer, end hvis jeg skulle have lavet det med normal CSS.
 
-Det er meget hurtigere med [framer-motion] netop fordi man bare adder sin framer-motion ved at give elementet `<motion.div>` og så giver du bare dit element de forskellige props eftersom hvordan du vil have div'en skal animeres.
+Det er meget hurtigere med [framer-motion] netop fordi man bare adder sin framer-motion ved at give elementet `<motion.div>` og så giver du bare dit element de forskellige props eftersom hvordan du vil have dit element skal animeres.
 
 ### **React-router-dom**
 
-Med npm pakken [React-router-dom] kan jeg nemt og hurtigt navigere rundt i min applikation, end hvis jeg skulle have lavet det med normal javascript. Det der er fedt ved [React-router-dom] er, at jeg kan lave en single page applikation, og det gør at min applikation bliver hurtigere og giver en mere smooth oplevelse for brugeren, fremfor hvis der skulle laves page reload ved alle skift af ens view.
+Med npm pakken [React-router-dom] kan jeg nemt navigere rundt i min applikation, end hvis jeg skulle have lavet det med normal javascript. Det der er fedt ved [React-router-dom] er, at jeg kan lave en single page applikation, og det gør at min applikation bliver hurtigere og giver en mere smooth oplevelse for brugeren, fremfor hvis der skulle laves page reload ved alle skift af ens view.
 
 ### **Axios**
 
-Jar har brugt Axios til mine HTTP-requests. Axios er en npm pakke som gør det nemmere at lave Http-requests fremfor med et normalt fetch kald. Med axios er formateringen til json allerede indbygget i det. jeg har, og det er også nemmere at lave en error handling med axios samt en loader, end hvis jeg skulle have lavet det med et normalt fetch kald. Jeg føler også at koden er nemmere at læse og forstå med axios fremfor end et normalt fetch-kald.
+Jar har brugt Axios til mine HTTP-requests. Axios er en npm pakke som gør det nemmere at lave Http-requests fremfor med et normalt fetch kald. Med axios er formateringen til json allerede indbygget i pakken og så er axios også bagud kombatibelt sådet kan virke hos ældrere browsers.
+ Personligt synes jeg også det nemmere at lave en error handling med axios samt med at sende loaders med, end hvis jeg skulle have lavet det med et normalt fetch kald. Jeg føler også at koden er nemmere at læse og forstå med axios fremfor end et normalt fetch-kald.
+
 ### **React-spinners**
 Jeg har brugt npm pakken [react-spinners] og implementeret en loader på alle min fetch kald der skal hente data fra min database. Jeg valgte denne pakke da det er meget nemmere at få en loader, end hvis du skulle lave den selv fra bunden med Css. Med [react-spinners] importere jeg bare med `import { "WhateverLoader" } from "react-spinners";` og så kan jeg nemt adde loaderen med `<"WhateverLoader" />` og så kan jeg ændre på stylingen med props som fx `size={26}` og `color={"#5E2E53"}`.
 

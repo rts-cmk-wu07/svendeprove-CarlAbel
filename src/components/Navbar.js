@@ -23,7 +23,7 @@ export default function Navbar() {
             <Calendar size={28} />
           </Link>
         </li>
-        {/* // Logud-knappen er ikke implementeret endnu */}
+        {/* // Logud-knappen er ikke implementeret */}
         {/* <li className="my-6 text-[28px] rounded-3xl border-[2px] border-black p-2">
           <button onClick="">
             <LogOut size={26} />

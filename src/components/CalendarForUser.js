@@ -46,7 +46,7 @@ export default function CalendarForUser() {
                     // Ellers vises en loader, mens data hentes
                 ) : (
 
-                    <PropagateLoader className="ml-40 mt-54 h-12" color="#36d7b7" />
+                    <PropagateLoader className="ml-40 mt-54 h-12" color="#EAEAEA" />
                 )}
             </div>
         </div>

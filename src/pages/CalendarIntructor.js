@@ -58,9 +58,9 @@ export default function CalendarInstructor() {
                     </ul>
                 ) : (
                     // Hvis der ikke er data, vises en loader
-                    <div className="text-center">
-                        <PropagateLoader color="#36d7b7" />
-                    </div>
+
+                    <PropagateLoader className="ml-40 mt-54 h-12" color="#EAEAEA" />
+
                 )}
             </div>
         </div >
