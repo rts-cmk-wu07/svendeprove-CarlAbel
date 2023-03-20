@@ -1,23 +1,29 @@
+// Importerer nødvendige hooks og komponenter
 import useAxios from "../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PropagateLoader } from "react-spinners";
 
+// Opretter et funktionskomponent ved navn Activities
 export default function Activities() {
+  // Bruger useAxios til at hente aktiviteter fra API'et
   const { data, loading, error } = useAxios({
     url: "http://localhost:4000/api/v1/activities",
   });
   const navigate = useNavigate();
 
+  // Returnér et JSX-element
   return (
     <div className="pb-3">
       <pre>{error}</pre>
       {loading ? (
+        // Vis en "Loader", imens data hentes
         <PropagateLoader className="text-center" color="#36d7b7" />
       ) : (
         <div className="flex flex-col items-center gap-8 pb-16 overflow-y-scroll">
           {data &&
+            // mapper over hver aktivitet og visser dets indhold i et "Card"
             data.map((item) => (
               <div
                 onClick={() => navigate(`/activities/${item.id}`)}
@@ -41,3 +47,5 @@ export default function Activities() {
   );
 }
 
+
+// Path: src\components\ActivitiesDetailsCard.js

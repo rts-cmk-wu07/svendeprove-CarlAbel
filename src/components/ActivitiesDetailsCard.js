@@ -1,3 +1,4 @@
+// Importér nødvendige hooks og komponenter
 import { useParams } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import { PropagateLoader } from "react-spinners";
@@ -5,20 +6,27 @@ import HandleSignUpBtn from "./HandleSignUpBtn";
 import { useContext } from "react";
 import { TokenContext } from "../contexts/TokenProvider";
 
+// Opretter et funktionskomponent ved navn ActivitiesDetailsCard
 export default function ActivitiesDetailsCard() {
+  // Hent id fra URL-parametre
   const { id } = useParams();
+  // Brug useAxios til at hente aktivitetsdetaljer fra API'et
   const { data } = useAxios({
     url: `http://localhost:4000/api/v1/activities/${id}`,
   });
 
+  // Henter token fra TokenContext
   const { token } = useContext(TokenContext);
 
+  // Vis en "loader", imens data hentes
   if (!data) {
     return <PropagateLoader className="text-center" color="#36d7b7" />;
   }
 
+  // Dekonstruer nødvendige data fra API-svaret.
   const { name, asset, description } = data;
 
+  // Returnere et JSX-element med aktivitetsdetaljerne og en tilmeldingsknap (hvis der er en token)
   return (
     <>
       <div className="w-full min-h-[32rem] relative rounded-lg">
@@ -42,3 +50,4 @@ export default function ActivitiesDetailsCard() {
     </>
   );
 }
+

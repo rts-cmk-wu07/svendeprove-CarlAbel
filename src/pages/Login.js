@@ -1,29 +1,35 @@
+// Importerer nødvendige ressourcer og hooks
 import backgroundImage from "../Assets/splash-image.jpg"
 import { useState } from "react";
 import useLogin from "../hooks/useLogin";
 import { X } from "lucide-react"
 
-
+// Definerer Login-funktionen
 export default function Login() {
 
+  // Opretter state for login-information
   const [loginInfo, setLoginInfo] = useState({
     username: "",
     password: "",
-    rememberMe: false // added state for checkbox
+    rememberMe: false // tilføjet state for afkrydsningsfeltet
   });
 
+  // Håndterer inputændringer
   const handleInputChange = event => {
     const { name, value, type, checked } = event.target;
     const newValue = type === "checkbox" ? checked : value;
     setLoginInfo(prevState => ({ ...prevState, [name]: newValue }));
   };
 
+  // Henter handleLogin, loading og error fra useLogin-hook
   const { handleLogin, loading, error } = useLogin();
 
+  // Funktion til at lukke login-vinduet og navigere til hjemmesiden
   const handleClose = () => {
     window.location = "/home";
   };
 
+  // Returnerer login-komponenten
   return (
     <div className="Login overflow-hidden relative flex justify-center items-center">
       <div>{loading}</div>

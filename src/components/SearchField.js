@@ -1,23 +1,24 @@
+// Importerer nødvendige hooks, komponenter og ikoner
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 
 export default function SearchField() {
+  // Bruger useState og useNavigate til at styre søgeforespørgslen og filtrere i aktivitetslisten
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  // Henter aktiviteter med custom hook fra API'et og filtrerer dem baseret på søgeforespørgslen
   const { data } = useAxios({
     url: "http://localhost:4000/api/v1/activities",
   });
-
-  const navigate = useNavigate();
-
   const filteredActivities = data?.filter((activity) =>
     activity.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  //Lav en handling ved alle "inputs" på formen
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform any action on form submission
   };
 
   const hasResults = searchQuery !== "" && filteredActivities?.length > 0;
@@ -40,8 +41,7 @@ export default function SearchField() {
           placeholder="Søg efter aktiviteter"
         />
       </form>
-
-      {/* Display filtered activities */}
+      {/* // Viser et søgefelt og resultaterne af søgningen under søgefeltet */}
       {hasResults ? (
         <div className="flex flex-col items-center gap-8 mt-8">
           {filteredActivities.map((activity) => (
@@ -67,6 +67,7 @@ export default function SearchField() {
           ))}
         </div>
       ) : (
+        /* // Ellers vises dette */
         <div className="mt-8 text-center text-white">
           {searchQuery !== "" ? (
             "Der blev ikke fundet nogle aktiviteter med det navn, prøv at søge efter noget andet"
