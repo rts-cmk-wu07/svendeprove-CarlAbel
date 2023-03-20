@@ -287,4 +287,4 @@ Selve handleDelete funktionen, udfører et Axios delete-request til backenden fo
 
 Hvis jeg skulle skalere dette projekt, ville jeg tilføje muligheden for at oprette en bruger. Jeg ville også tilføje en instructor-bruger, der kunne oprette og redigere i aktiviteter.
 
-Hvis jeg skulle forbedre applikationen for brugere ville jeg tilføje flere synlige load-animationer i forhold til hvor lækkert det er at se på designet.
+Hvis jeg skulle forbedre applikationen for brugere ville jeg tilføje flere synlige load-animationer og andre småting, som at kunnne se hvilket view man er på i forhold til drawer-menuen. 
