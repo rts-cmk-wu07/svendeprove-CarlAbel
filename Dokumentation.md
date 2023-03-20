@@ -249,7 +249,6 @@ export default function HandleSignUpBtn({ act }) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.5 }}
           className="bg-[#5E2E53] font-ubuntu h-[54px] w-[250px] text-white text-[18px] absolute right-6 px-8 py-2 bottom-6 rounded-xl"
-
           type="button"
           value="Forlad"
           onClick={handleDelete}
