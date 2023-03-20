@@ -282,3 +282,9 @@ på samme tid bruger jeg et useEffect hook til at kontrollere, om brugeren aller
 Selve handleSignUp funktionen, udfører et Axios POST-request til backenden for at tilmelde brugeren til aktiviteten. Hvis kaldet er vellykket, opdateres isSignedUp til true, og en toast-notifikation vises for at bekræfte tilmeldingen og knappen ændres til "Forlad".
 
 Selve handleDelete funktionen, udfører et Axios delete-request til backenden for at afmelde brugeren til aktiviteten. Hvis kaldet er vellykket, opdateres isSignedUp til true, og en toast-notifikation vises for at bekræfte tilmeldingen og knappen ændres tilbage til "tilmeld".
+
+## Projekt skalering
+
+Hvis jeg skulle skalere dette projekt, ville jeg tilføje muligheden for at oprette en bruger. Jeg ville også tilføje en instructor-bruger, der kunne oprette og redigere aktiviteter.
+
+Hvis jeg skulle forbedre denne applikationen for brugere ville jeg tilføje flere synlige load-animationer i forhold til hvor lækkert det er at se på designet.
